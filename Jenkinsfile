@@ -6,7 +6,7 @@ pipeline {
 
     stage('GitHub Pull') {
      steps {
-				git 'https://github.com/GNRain/AchatFront'
+				git branch: 'main', url: 'https://github.com/GNRain/AchatFront'
 			}
 }
    stage('Tansib'){
