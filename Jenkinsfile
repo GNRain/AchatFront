@@ -2,9 +2,14 @@ pipeline {
 
   agent any
 
+
+  environment {
+		DOCKERHUB_CREDENTIALS=credentials('dockerlogin')
+	}
+  
   stages {
 
-    stage('GitHub Pull') {
+    stage('ejbed mel git yehdik') {
      steps {
 				git branch: 'main', url: 'https://github.com/GNRain/AchatFront'
 			}
@@ -20,8 +25,18 @@ pipeline {
 
 }
 }
+    stage('do5oul docker') {
 
+			steps {
+				sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+			}
+		}
+    stage('Dez lel dockerhub'){
+      steps {
+        				sh 'docker push gnrain/devops:latest'        
 
   }
 
+}
+  }
 }
