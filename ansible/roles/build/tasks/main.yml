@@ -18,3 +18,11 @@
     recreate: true
     ports:
       - "4200:80"
+- name: tag the image
+  become: true
+  command: docker tag devops raingn/devops
+  
+- name: push docker container to dockerhub
+  become: true
+  command: docker push raingn/devops
+  
