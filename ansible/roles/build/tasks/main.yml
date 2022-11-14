@@ -1,5 +1,6 @@
 ---
 - name: create image docker
+  gather_facts: false
   become: true
   docker_image:
     name: devops
