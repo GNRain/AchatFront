@@ -1,5 +1,8 @@
 ---
 - name: create image docker
+  hosts: remote_host
+  remote_user: root
+  become: true
   docker_image:
     name: devops
     build:
@@ -9,6 +12,9 @@
     state: present
     force_source: true
 - name: run container docker
+  hosts: remote_host
+  remote_user: root
+  become: true
   docker_container:
     name: front_container
     image: devops:latest
