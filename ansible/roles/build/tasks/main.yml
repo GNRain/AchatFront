@@ -1,5 +1,5 @@
-# create da docker image!
 ---
+# create da docker image!
 - name: create image docker
   docker image:
     name: devops
@@ -10,10 +10,10 @@
     state: present
     force_source: true
 - name: run container docker
- docker_container:
-   name: front_container
-   image: devops:latest
-   state: started
-   recreate: true
-   ports:
-     - "4200:80"
+  docker_container:
+    name: front_container
+    image: devops:latest
+    state: started
+    recreate: true
+    ports:
+      - "4200:80"
