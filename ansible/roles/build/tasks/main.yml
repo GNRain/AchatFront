@@ -9,7 +9,7 @@
     source: build
     state: present
     force_source: true
--name: run container docker
+- name: run container docker
  docker_container:
    name: front_container
    image: devops:latest
